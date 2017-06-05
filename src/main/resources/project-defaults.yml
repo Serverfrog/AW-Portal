@@ -1,0 +1,11 @@
+swarm:
+  ds:
+    connection:
+      url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+    name: awportal
+    password:
+    username:
+  jdbc:
+    driver: h2
+  jpa:
+    default-datasource: java:jboss/datasource/awportalDatasource

@@ -17,7 +17,7 @@ public class PuConfig {
 
     public final static String NAME = "awportal";
 
-    public final static String DATASOURCE = "java:jboss/datasource/awportalDatasource";
+    public final static String DATASOURCE = "java:jboss/datasources/awportal";
 
     @PersistenceUnit(unitName = NAME)
     @Produces

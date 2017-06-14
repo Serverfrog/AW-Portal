@@ -3,9 +3,14 @@ package de.serverfrog.awportal.entity.match;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import de.serverfrog.awportal.common.Persistable;
 import lombok.Getter;
 import lombok.ToString;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 /**
@@ -17,8 +22,15 @@ import java.util.List;
 })
 @ToString
 @Getter
-public class MatchHistory {
+@Entity
+public class MatchHistory extends Persistable<Long>{
 
     @JsonProperty("matchhistory")
-    private List<Match> matches = null;
+    @OneToMany
+    private List<MatchEntry> matchEntries = null;
+
+    @Id
+    @GeneratedValue
+    @Getter
+    private Long id;
 }

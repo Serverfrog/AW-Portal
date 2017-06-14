@@ -1,6 +1,6 @@
 package de.serverfrog.awportal.misc;
 
-import de.serverfrog.awportal.entity.match.Match;
+import de.serverfrog.awportal.entity.match.MatchEntry;
 import de.serverfrog.awportal.entity.match.MatchHistory;
 import org.apache.commons.io.IOUtils;
 
@@ -24,7 +24,7 @@ public class TestRunner {
             e.printStackTrace();
         }
         MatchHistory unmarshal = JaxbMarschaller.unmarshal(MatchHistory.class, sw.toString());
-        for (Match m : unmarshal.getMatches()) {
+        for (MatchEntry m : unmarshal.getMatchEntries()) {
             System.out.println(m.getStart());
 
         }

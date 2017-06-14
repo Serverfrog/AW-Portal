@@ -5,11 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import de.serverfrog.awportal.common.Persistable;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,16 +18,22 @@ import java.util.List;
 })
 @Data
 @Entity
-public class Team extends Persistable<Long>{
+public class Team {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long databaseId;
 
     @JsonProperty("id")
-    public int jsonId;
+    public int id;
 
     @JsonProperty("players")
-    public List<Player> players = null;
+    @OneToMany(mappedBy = "team")
+    public List<Player> players;
+
+    @Getter
+    @Setter
+    @ManyToOne
+    private MatchEntry matchEntry;
 
 }

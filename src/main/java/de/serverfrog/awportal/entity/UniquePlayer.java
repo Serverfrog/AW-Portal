@@ -1,12 +1,12 @@
 package de.serverfrog.awportal.entity;
 
 import de.serverfrog.awportal.common.Persistable;
-import de.serverfrog.awportal.entity.match.Match;
+import de.serverfrog.awportal.entity.match.MatchEntry;
 import lombok.Data;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 /**
@@ -14,10 +14,11 @@ import java.util.List;
  */
 @Entity
 @Data
-public class UniquePlayer extends Persistable<Long>{
+public class UniquePlayer extends Persistable<Long> {
 
     @Id
     private Long id;
 
-    private List<Match> matches;
+    @OneToMany
+    private List<MatchEntry> matchEntries;
 }

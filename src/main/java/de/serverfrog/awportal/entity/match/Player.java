@@ -5,11 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import de.serverfrog.awportal.common.Persistable;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,8 +71,13 @@ public class Player extends Persistable<Long>{
     @JsonProperty("platoonIndex")
     public int platoonIndex;
 
-    @ElementCollection
     @JsonProperty("damages")
+    @OneToMany
     public List<Damage> damages;
+
+    @Getter
+    @Setter
+    @ManyToOne
+    private Team team;
 
 }

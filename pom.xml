@@ -210,7 +210,7 @@
                     <url><![CDATA[jdbc:mysql://localhost/awportal]]></url>
                     <username>awportal</username>
                     <password>awportal</password>
-                    <skip>false</skip>
+                    <skip>true</skip>
                     <show>true</show>
                 </configuration>
             </plugin>

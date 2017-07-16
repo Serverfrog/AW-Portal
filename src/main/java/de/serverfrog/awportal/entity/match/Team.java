@@ -3,7 +3,6 @@ package de.serverfrog.awportal.entity.match;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import de.serverfrog.awportal.common.Persistable;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;

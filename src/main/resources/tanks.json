@@ -1,7 +1,7 @@
 [
   {
     "tank_key": "zhalo-s-2s14",
-    "title": "2С14 Zhalo-s",
+    "title": "2C14 Zhalo-s",
     "dealer": "h",
     "nation": "ussr",
     "vehicle_class": "a",
@@ -511,7 +511,7 @@
   },
   {
     "tank_key": "t-90ms",
-    "title": "Т-90МС",
+    "title": "Т-90МC",
     "dealer": "h",
     "nation": "ru",
     "vehicle_class": "i",
@@ -916,7 +916,7 @@
   },
   {
     "tank_key": "gvosdika2s1",
-    "title": "2С1 \"Carnation\"",
+    "title": "2C1 \"Carnation\"",
     "dealer": "k",
     "nation": "ussr",
     "vehicle_class": "l",
@@ -931,7 +931,7 @@
   },
   {
     "tank_key": "akatsiya2s3",
-    "title": "2С3 Akatsiya",
+    "title": "2C3 Akatsiya",
     "dealer": "k",
     "nation": "ussr",
     "vehicle_class": "l",
@@ -1246,7 +1246,7 @@
   },
   {
     "tank_key": "zhalo-s-2s14mrc",
-    "title": "2С14 Zhalo-C Merc",
+    "title": "2C14 Zhalo-C Merc",
     "dealer": "d",
     "nation": "ussr",
     "vehicle_class": "a",

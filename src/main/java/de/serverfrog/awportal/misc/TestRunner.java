@@ -1,5 +1,6 @@
 package de.serverfrog.awportal.misc;
 
+import de.serverfrog.awportal.entity.Tank;
 import de.serverfrog.awportal.entity.match.MatchEntry;
 import de.serverfrog.awportal.entity.match.MatchHistory;
 import org.apache.commons.io.IOUtils;
@@ -16,17 +17,16 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 public class TestRunner {
 
     public static void main(String[] args) {
-        InputStream resource = TestRunner.class.getResourceAsStream("/match_history");
+        InputStream resource = TestRunner.class.getResourceAsStream("/tanks.json");
         StringWriter sw = new StringWriter();
         try {
             IOUtils.copy(resource, sw, UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        MatchHistory unmarshal = JaxbMarschaller.unmarshal(MatchHistory.class, sw.toString());
-        for (MatchEntry m : unmarshal.getMatchEntries()) {
-            System.out.println(m.getStart());
-
+        Tank[] unmarshal = JaxbMarschaller.unmarshal(Tank[].class, sw.toString());
+        for (Tank m : unmarshal) {
+            System.out.println(m.getTitle());
         }
     }
 }
